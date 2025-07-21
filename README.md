@@ -42,26 +42,6 @@ Aplikasi terdiri dari:
    dan file 'index.html' melakukan fetch ke URL tersebut.
 
 ==============================
-☁️ Deployment Hugging Face (Docker)
-==============================
-
-Untuk menggunakan HTML kustom dan Flask di Hugging Face:
-
-1. Buat file Dockerfile:
-   (lihat dokumentasi atau minta ke pengembang)
-
-2. Upload file berikut ke Hugging Face Space:
-   - app.py
-   - index.html
-   - coffee_model.joblib
-   - model_columns.joblib
-   - requirements.txt
-   - Dockerfile
-
-3. Atur SDK ke: Docker
-4. Tunggu proses build selesai, lalu akses dari URL Space Anda.
-
-==============================
 🌐 Deployment ke Hosting
 ==============================
 
