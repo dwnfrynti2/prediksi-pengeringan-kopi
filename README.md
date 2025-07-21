@@ -62,14 +62,9 @@ Untuk menggunakan HTML kustom dan Flask di Hugging Face:
 4. Tunggu proses build selesai, lalu akses dari URL Space Anda.
 
 ==============================
-🌐 Deployment ke PythonAnywhere
+🌐 Deployment ke Hosting
 ==============================
 
-1. Buat akun di: https://www.pythonanywhere.com/
-2. Upload semua file ke folder project Anda
-3. Buat `wsgi.py` dan atur ke Flask app
-4. Ubah endpoint fetch di `index.html` menjadi:
-   fetch('https://<username>.pythonanywhere.com/predict')
 
 ==============================
 📌 Catatan Penting
