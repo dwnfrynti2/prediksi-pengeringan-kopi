@@ -11,7 +11,7 @@
             --bg-body: #f4f4f4;
             --bg-card: white;
             --bg-header: #5D4037;
-            --bg-footer: #523e39;
+            --bg-footer: #501c11;
             --color-text-primary: #333;
             --color-text-secondary: #555;
             --color-accent: #795548;
@@ -52,6 +52,7 @@
             background-color: var(--bg-header);
             color: var(--color-header-text);
             padding: 10px 25px;
+            gap: 12px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -85,6 +86,7 @@
             color: var(--color-header-text);
             text-decoration: none;
             margin-left: 20px;
+            max-width: 1200px;
             font-size: 1em;
             padding-bottom: 5px;
             transition: opacity 0.3s, border-bottom-color 0.3s, transform 0.3s;
@@ -201,7 +203,7 @@
 
         /* UKURAN IKON DISERAGAMKAN */
         .card h2 svg, .card h3 svg {
-            width: 24px;
+            width: 24\px;
             height: 24px;
             margin-right: 10px;
             fill: var(--color-accent);
@@ -620,7 +622,7 @@
             }
 
             .main-content {
-                padding: 10px;
+                padding: 12px 16px;
                 margin: 10px auto;
             }
 
@@ -628,42 +630,63 @@
             .header {
                 flex-direction: column;
                 align-items: flex-start;
-                padding: 15px;
-                gap: 15px;
+                padding: 10 15px;
+                gap: 5px;
             }
 
             .header-left {
                 width: 100%;
+                display: flex;
+                align-items: center;
+                gap: 10px;
             }
 
             .header-right {
-                width: 100%;
-                flex-direction: column;
+                display: flex;                
                 align-items: center;
-                gap: 15px;
+                justify-content: space-between;
+                width: 100%;
+                flex-wrap: nowrap;
             }
 
             .header h1 {
-                font-size: 1.1em;
+                font-size: 1em;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 100%;
             }
 
             .nav {
                 display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 5px 15px;
+                flex-wrap: nowrap;
+                max-width: 1200px;
+                margin: 0 auto;
+                overflow: auto;
+                white-space: nowrap;
+                gap: 15px;
+                padding: 5px 10px;
+                scroll-behavior: smooth;
                 width: 100%;
-                order: 2; /* Pindahkan navigasi setelah toggle */
+                flex-grow: 1;
             }
 
             .nav a {
-                margin-left: 0;
-                font-size: 0.9em;
+                flex: 0 0 auto;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                padding: 10px 8px;
+                font-size: 0.95em;
+                color: var(--color-header-text);
+                text-decoration: none;
+                border-bottom: 2px solid transparent;
+                transition: 0.3s;
             }
 
             .theme-switch-wrapper {
-                margin-left: 0;
-                order: 1; /* Pindahkan toggle ke atas navigasi */
+                flex-shrink: 0;
+                margin-left: 10;
             }
 
             /* Ubah tata letak form dan card */
@@ -678,15 +701,30 @@
             /* Ubah tata letak panduan interaktif */
             .panduan-container {
                 flex-direction: column; /* Susun navigasi dan konten secara vertikal */
+                gap: 12px;
+                padding: 0 10px;
             }
             
             .panduan-nav {
-                flex-basis: auto;
+                display: flex;
                 flex-direction: row; /* Buat tombol navigasi berjajar */
                 flex-wrap: wrap; /* Izinkan tombol untuk wrap */
                 justify-content: center;
+                gap: 8px;
+                margin-bottom: 10px;
             }
 
+            .panduan-nav button {
+                padding: 8px 10px;
+                font-size: 0.85em;
+                border-radius: 6px;
+                flex: 1 1 100%; /* Responsif, biar wrap bagus */
+                max-width: 250px;
+  }
+            .panduan-nav button.active {
+                background-color: #7b4f3c; /* Warna soft */
+                color: white;
+  }
             .panduan-image {
                 display: none; /* Sembunyikan gambar panduan di mobile untuk hemat ruang */
             }
@@ -702,10 +740,10 @@
 
             /* Sesuaikan footer */
             .footer {
-                padding: 15px;
+                padding: 4px 10px;
             }
             .footer-logos img {
-                height: 30px;
+                height: 15px;
             }
             .footer-content h4 {
                 font-size: 0.8em;
@@ -723,7 +761,7 @@
         <div class="header-left">
             <!-- [DIUBAH] Mengembalikan nama file gambar asli -->
             <img src="Screenshot 2025-06-29 221242.jpg" alt="Logo Kopi" class="logo-header">
-            <h1>Prediksi Waktu Pengeringan Kopi di Dome</h1>
+            <h1>Prediksi Pengeringan Kopi di Dome</h1>
         </div>
         <div class="header-right">
             <nav class="nav">
@@ -745,7 +783,7 @@
     <main class="main-content">
         <div id="beranda" class="page active">
             <div class="card">
-                <h2><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 4 12h3v8h3z"/></svg>Selamat datang di sistem prediksi waktu pengeringan kopi!</h2>
+                <h2><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 4 12h3v8h3z"/></svg>Selamat datang di sistem prediksi pengeringan kopi!</h2>
 
                 <div class="slider-container">
                     <!-- [DIUBAH] Mengembalikan nama file gambar asli -->
@@ -781,8 +819,6 @@
                 <img src="Alur Sistem Perangkat.png" alt="Alur Sistem: Perangkat ke Web Monitoring ke Web Prediksi" class="alur-image">
                 
                 <div class="container">
-                    <h1>Panduan Sistem Prediksi Pengeringan Kopi</h1>
-
                     <div class="komponen-sistem">
                         <h2>Mengenal Komponen Sistem</h2>
                         <div class="komponen">
@@ -921,7 +957,7 @@
         <div id="panduan-kopi" class="page">
             <div class="card">
                 <h2><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>Panduan Kopi di Dome</h2>
-                <h3 style="font-weight: 500; color: var(--color-text-secondary); margin-top: -10px;">Accordion Interaktif</h3>
+                <h3 style="font-weight: 500; color: var(--color-text-secondary); margin-top: -10px;"></h3>
                 
                 <div class="panduan-container">
                     <div class="panduan-nav">
@@ -976,7 +1012,7 @@
                                 <div class="accordion-item">
                                     <button class="accordion-question">Untuk siapa hasil prediksi ini bermanfaat?</button>
                                     <div class="accordion-answer">
-                                        <p>Prediksi ini bermanfaat bagi petani, operator dome, atau siapa saja yang ingin mengetahui estimasi waktu kopi akan kering, sehingga proses panen dan penggunaan energi bisa lebih efisien.</p>
+                                        <p>Prediksi ini bermanfaat bagi petani, operator dome, atau siapa saja yang ingin mengetahui estimasi kopi akan kering, sehingga proses panen dan penggunaan energi bisa lebih efisien.</p>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
@@ -988,7 +1024,7 @@
                                 <div class="accordion-item">
                                     <button class="accordion-question">Apakah web prediksi ini bisa mengatur alat dome secara otomatis?</button>
                                     <div class="accordion-answer">
-                                        <p>Tidak. Web prediksi hanya menghitung estimasi waktu pengeringan berdasarkan data yang Anda input. Pengaturan alat dome (lampu, kipas) sudah dikontrol otomatis oleh sistem perangkat.</p>
+                                        <p>Tidak. Web prediksi hanya menghitung estimasi pengeringan berdasarkan data yang Anda input. Pengaturan alat dome (lampu, kipas) sudah dikontrol otomatis oleh sistem perangkat.</p>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
@@ -1018,7 +1054,7 @@
 
     <footer class="footer">
         <div class="footer-content">
-            <p>©2025 Prediksi Waktu Pengeringan Kopi di Dome</p>
+            <p>©2025 Prediksi Pengeringan Kopi di Dome</p>
         </div>
     </footer>
 
